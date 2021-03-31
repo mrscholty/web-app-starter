@@ -1,0 +1,19 @@
+{
+  "name": "web-app-starter",
+  "version": "1.0.0",
+  "description": "setup for (SPA) web app using web standards and web components",
+  "main": "index.js",
+  "scripts": {
+    "start": "browser-sync start -s src -f src --single --no-notify --no-open"
+  },
+  "keywords": [],
+  "author": "Markus Scholtysik",
+  "license": "ISC",
+  "devDependencies": {
+    "browser-sync": "^2.26.14",
+    "rollup": "^2.44.0"
+  },
+  "dependencies": {
+    "lit-html": "^1.3.0"
+  }
+}
