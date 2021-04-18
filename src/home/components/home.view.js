@@ -7,7 +7,10 @@ export default class HomeView extends HTMLElement {
     }
 
     connectedCallback() {
+        this.render();
+    }
 
+    render() {
         const style = html`
             <style>
                 :host {
@@ -21,7 +24,6 @@ export default class HomeView extends HTMLElement {
         `;
 
         render(template, this.shadowRoot);
-
     }
 }
 
