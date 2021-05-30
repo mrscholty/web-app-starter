@@ -2,6 +2,11 @@ body {
     margin: 0;
     box-sizing: border-box;
     font-family: sans-serif;
+
+    --theme-color-1: lightskyblue;
+    --theme-color-2: #EFEFEF4F;
+    --theme-color-3: lightgray;
+
 }
 
 .container {
@@ -33,7 +38,7 @@ header {
 }
 
 header .title {
-    background: lightskyblue;
+    background: var(--theme-color-1);
     height: 40px;
 }
 
@@ -48,19 +53,18 @@ header nav {
     margin: 0;
     height: 20px;
     padding: 10px 0;
-    background: #EFEFEF4F;
+    background: var(--theme-color-2);
 }
 
 #outlet
 {
     grid-area: outlet;
-    background: #fff;
     margin: 10px;
 }
 
 footer {
     grid-area: footer;
-    background: lightgray;
+    background: var(--theme-color-3);
     padding: 10px;
     font-size: 0.8em;
 }

@@ -5,7 +5,7 @@ export default class AppNavigation extends BaseElement {
 
     connectedCallback() {
         document.addEventListener('router-location-changed', (e) => {
-           this.handleActiveRoute(e.detail.currentRoute)
+            this.handleActiveRoute(e.detail.currentRoute);
         });
         super.connectedCallback();
     }
@@ -14,7 +14,7 @@ export default class AppNavigation extends BaseElement {
         (this.shadowRoot.querySelectorAll('a') || [])
             .forEach(e => e?.classList.remove('active'));
 
-        const currentRoute = '/' + route.split('/')[1]
+        const currentRoute = '/' + route?.split('/')[1];
 
         this.shadowRoot.querySelector(`a[href='${currentRoute}']`)
             ?.classList.toggle('active');
