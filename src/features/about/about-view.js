@@ -1,5 +1,5 @@
-import BaseElement from '../base-element.js';
-import {tpl} from '../renderer.js';
+import BaseElement from '../../common/base-element.js';
+import {tpl} from '../../common/renderer.js';
 
 export default class AboutView extends BaseElement {
 

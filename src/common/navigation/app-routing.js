@@ -1,25 +1,25 @@
-import {Router} from '../lib/vendor/vaadin-router.js';
+import {Router} from '../../lib/vendor/vaadin-router.js';
 
 const routes = [
     {path: '/', redirect: '/home'},
     {
         path: '/home',
         action: async () => {
-            await import('./home/home-view.js')
+            await import('../../features/home/home-view.js');
         },
         component: 'home-view'
     },
     {
         path: '/about',
         action: async () => {
-            await import('./about/about-view.js')
+            await import('../../features/about/about-view.js');
         },
         component: 'about-view'
     },
     {
         path: '(.*)',
         action: async () => {
-            await import('./not-found/notFound-view.js')
+            await import('../not-found/notFound-view.js');
         },
         component: 'not-found-view'
     }
@@ -37,9 +37,9 @@ export function getRoutingParams(component) {
 }
 
 window.addEventListener('vaadin-router-location-changed', (e) => {
-        document.dispatchEvent(new CustomEvent('router-location-changed', {
+    document.dispatchEvent(new CustomEvent('router-location-changed', {
         detail: {
             currentRoute: e.detail.location.pathname
         }
-    }))
+    }));
 });

@@ -4,7 +4,8 @@
   "description": "setup for (SPA) web app using web standards and web components",
   "main": "index.js",
   "scripts": {
-    "start": "browser-sync start -s src -f src --single --no-notify --no-open"
+    "start": "browser-sync start -s src -f src --single --no-notify --no-open",
+    "lint": "eslint ./src/**/*.js || true"
   },
   "keywords": [],
   "author": "Markus Scholtysik",
@@ -13,6 +14,7 @@
     "@rollup/plugin-node-resolve": "^13.0.0",
     "@vaadin/router": "^1.7.4",
     "browser-sync": "^2.26.14",
+    "eslint": "^8.15.0",
     "lit-html": "^1.4.1",
     "rollup": "^2.49.0"
   }

@@ -1,2 +1,2 @@
-import './features/app-routing.js';
-import './features/navigation/app-navigation.js';
+import './common/navigation/app-routing.js';
+import './common/navigation/app-navigation.js';

@@ -1,5 +1,5 @@
-import {tpl} from '../renderer.js';
-import BaseElement from '../base-element.js';
+import {tpl} from '../../common/renderer.js';
+import BaseElement from '../../common/base-element.js';
 
 export default class HomeView extends BaseElement {
 

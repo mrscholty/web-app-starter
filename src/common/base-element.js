@@ -7,10 +7,6 @@ export default class BaseElement extends HTMLElement {
         this.state = {};
     }
 
-    set props(value) {
-        this.state = Object.assign(this.state, value);
-    }
-
     connectedCallback() {
         this.render();
     }
@@ -19,8 +15,7 @@ export default class BaseElement extends HTMLElement {
     }
 
     render() {
-        const template = this.view();
-        renderView(template, this.shadowRoot);
+        renderView(this.view(), this.shadowRoot);
     }
 
     view() {
