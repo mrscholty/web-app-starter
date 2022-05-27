@@ -8,8 +8,8 @@ starter web app for creating single-page applications using web standards
 - [vaadin-router](https://vaadin.com/router/) (for routing)
 
 ##### at development time
-- [Browsersync](https://browsersync.io/) (as local dev server)
-- [Rollup.js](https://rollupjs.org/) (for bundling third party ES modules)
+- [browsersync](https://browsersync.io/) (as local dev server)
+- [rollup.js](https://rollupjs.org/) (for bundling third party ES modules)
 
 
 #### Install npm dependencies
