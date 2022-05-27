@@ -1,13 +1,17 @@
-import BaseElement from '../base-element.js';
-import {tpl} from '../renderer.js';
+import {renderTemplate, tpl} from '../html-renderer.js';
 
-export default class AppNavigation extends BaseElement {
+ class AppNavigation extends HTMLElement {
+
+     constructor() {
+         super();
+         this.attachShadow({mode: 'open'});
+     }
 
     connectedCallback() {
         document.addEventListener('router-location-changed', (e) => {
             this.handleActiveRoute(e.detail.currentRoute);
         });
-        super.connectedCallback();
+        this.render();
     }
 
     handleActiveRoute(route) {
@@ -20,7 +24,7 @@ export default class AppNavigation extends BaseElement {
             ?.classList.toggle('active');
     }
 
-    view() {
+    render() {
 
         const style = tpl`<style>
         
@@ -51,7 +55,7 @@ export default class AppNavigation extends BaseElement {
 
         </style>`;
 
-        return tpl`
+        renderTemplate(tpl`
                 ${style}
              
                 <ul>
@@ -63,7 +67,7 @@ export default class AppNavigation extends BaseElement {
                     </li>
                 </ul>
         
-        `
+        `, this.shadowRoot);
     }
 }
 

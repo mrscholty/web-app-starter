@@ -1,9 +1,17 @@
-import {tpl} from '../../common/renderer.js';
-import BaseElement from '../../common/base-element.js';
+import {renderTemplate, tpl} from '../../common/html-renderer.js';
 
-export default class HomeView extends BaseElement {
+export default class HomeView extends HTMLElement {
 
-    view() {
+    constructor() {
+        super();
+        this.attachShadow({mode: 'open'});
+    }
+
+    connectedCallback() {
+        this.render();
+    }
+
+    render() {
         const style = tpl`
             <style>
                 :host {
@@ -11,10 +19,9 @@ export default class HomeView extends BaseElement {
                 }                
             </style>`;
 
-        return tpl`
+        renderTemplate(tpl`
             ${style}
-            <span>welcome</span>
-        `;
+            <span>welcome</span>`, this.shadowRoot);
     }
 
 }

@@ -1,9 +1,17 @@
-import BaseElement from '../base-element.js';
-import {tpl} from '../renderer.js';
+import {renderTemplate, tpl} from '../html-renderer.js';
 
-export default class NotFoundView extends BaseElement {
+export default class NotFoundView extends HTMLElement {
 
-    view() {
+    constructor() {
+        super();
+        this.attachShadow({mode: 'open'});
+    }
+
+    connectedCallback() {
+        this.render();
+    }
+
+    render() {
         const style = tpl`<style>
         :host {
             display: block;
@@ -11,9 +19,9 @@ export default class NotFoundView extends BaseElement {
         }  
         </style>`;
 
-        return tpl`
+        renderTemplate(tpl`
             ${style}
-            <span>not found</span>`;
+            <span>not found</span>`, this.shadowRoot);
     }
 
 }

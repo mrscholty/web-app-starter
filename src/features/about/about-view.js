@@ -1,18 +1,27 @@
-import BaseElement from '../../common/base-element.js';
-import {tpl} from '../../common/renderer.js';
+import {renderTemplate, tpl} from '../../common/html-renderer.js';
 
-export default class AboutView extends BaseElement {
+export default class AboutView extends HTMLElement {
 
-    view() {
+    constructor() {
+        super();
+        this.attachShadow({mode: 'open'});
+    }
+
+    connectedCallback() {
+        this.render();
+    }
+
+    render() {
         const style = tpl`<style>
         :host {
             display: block;
         }  
         </style>`;
 
-        return tpl`
+        renderTemplate(tpl`
             ${style}
-            <span>starter web app for creating single-page applications using web standards and web components</span>`;
+            <span>starter web app for creating single-page applications using web standards and web components</span>`,
+            this.shadowRoot);
     }
 }
 
