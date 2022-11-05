@@ -14,8 +14,8 @@
     "@rollup/plugin-node-resolve": "^13.3.0",
     "@vaadin/router": "^1.7.4",
     "browser-sync": "^2.27.10",
-    "eslint": "^8.16.0",
+    "eslint": "^8.26.0",
     "rollup": "^2.75.0",
-    "uhtml": "^3.0.1"
+    "uhtml": "^3.1.0"
   }
 }
